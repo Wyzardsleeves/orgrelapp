@@ -1,0 +1,83 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.orgrel-contain{
+  width: 90%;
+  margin: 0 5%;
+}
+.orgrel-content{
+  text-align: left;
+}
+
+
+.staff-section{
+  padding: 0 10%;
+}
+.staff-entry{
+  clear: both;
+  width: 100%;
+}
+.staff-section li{
+  float: left;
+  padding: 15px;
+  list-style: none;
+  border-radius: 15px;
+  margin: 5px;
+}
+.staff-section li:nth-child(even){
+  border: 1px solid grey;
+  background-color: #0101;
+}
+.staff-section li:nth-child(odd){
+  border: 1px solid grey;
+  background-color: #0202;
+}
+
+.staff-entry img{
+  width: 100px;
+  margin: 0 20px 0 0;
+}
+.staff-portrait{
+  float: left;
+}
+.staff-info{
+  float: left;
+  line-height: 5px;
+}
+.icon-options{
+  float: right;
+}
+.ion-plus-round, .ion-edit, .ion-close-round{
+  font-size: 25px;
+  padding: 5px;
+}
+.ion-plus-round{
+  color: green;
+}
+.ion-edit{
+  color: orange;
+}
+.ion-close-round{
+  color: red;
+}
