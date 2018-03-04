@@ -54,6 +54,14 @@
   background-color: #0202;
 }
 
+
+form input{
+  display: block;
+}
+
+.modal-entry{
+  line-height: 30px;
+}
 .staff-entry img{
   width: 100px;
   margin: 0 20px 0 0;
