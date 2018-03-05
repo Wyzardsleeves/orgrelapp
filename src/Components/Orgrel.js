@@ -39,6 +39,7 @@ class Orgrel extends Component {
     this.updateUser;
     this.handleInput;
     this.openModal;
+    this.closeModal;
   }
 
   //Modal functions --------------------------------------
@@ -83,11 +84,11 @@ class Orgrel extends Component {
         last_name: b,
         description: c,
         title: d
-      }
+      },
+      this.closeModal()
     )
     .then(function (response) {
       console.log(response);
-      this.closeModal();
     })
     .catch(function (err) {
       console.log(err.response);

@@ -9,6 +9,12 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to Orgrel</h1>
           <h3>Organizational Relationship keeper!</h3>
+          <div className="link-to-git">
+            <a href="https://github.com/Wyzardsleeves/orgrelapp" target="_blank">
+              <i className="ion-social-github"></i>
+              <p>Orgrel (React) on Github</p>
+            </a>
+          </div>
         </header>
         <div className="orgrel-contain">
           <Orgrel />

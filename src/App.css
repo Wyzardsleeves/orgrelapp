@@ -22,6 +22,28 @@
   font-size: large;
 }
 
+.link-to-git a{
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+}
+
+.link-to-git a:hover{
+  color: orange;
+}
+
+.link-to-git a i{
+  display: inline;
+  font-size: 25px;
+  padding: 0 5px;
+}
+
+.link-to-git a p{
+  display: inline;
+  font-size: 20px;
+  padding: 0 5px;
+}
+
 /* Modal styles */
 form input, form textarea{
   display: block;
