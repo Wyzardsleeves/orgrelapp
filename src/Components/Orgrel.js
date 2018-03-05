@@ -25,7 +25,7 @@ class Orgrel extends Component {
     this.state = {
       users: [],
       modalIsOpen: false,
-      fields: props.fields
+      job: null
     };
     //this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
@@ -35,14 +35,17 @@ class Orgrel extends Component {
   componentWillMount(){
     Modal.setAppElement('body');
     this.getFromApi();
-    this.addMinion;
-    this.deleteUser;
+    this.addUser;
     this.updateUser;
     this.handleInput;
+    this.openModal;
   }
 
   //Modal functions --------------------------------------
   openModal() {
+    this.setState({modalIsOpen: true});
+  }
+  openModalUpdate() {
     this.setState({modalIsOpen: true});
   }
 
@@ -70,7 +73,7 @@ class Orgrel extends Component {
   }
 
   //Add data as child (theoretically)
-  addMinion(a, b, c, d){
+  addUser(a, b, c, d){
     //event.preventDefault();
     console.log("The add is working");
     //-------- end of modal crap
@@ -84,6 +87,7 @@ class Orgrel extends Component {
     )
     .then(function (response) {
       console.log(response);
+      this.closeModal();
     })
     .catch(function (err) {
       console.log(err.response);
@@ -151,8 +155,14 @@ class Orgrel extends Component {
   //Deletes current user
   deleteUser(e){
     //e.preventDefault();
-    axios.delete(baseUrl + e.id);
     console.log("delete works on " + e.first_name + " " + e.last_name);
+    axios.delete(baseUrl + e.id)
+    .then((response) => {
+      console.log(this.state.users);
+    })
+    .catch(function (err) {
+      console.log(err.response);
+    });
   }
 
   render() {
@@ -164,8 +174,6 @@ class Orgrel extends Component {
         </h2>
 
         {/*More modal BS*/}
-        <button onClick={this.openModal}>Open Modal</button>
-
         <Modal isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
@@ -195,7 +203,7 @@ class Orgrel extends Component {
               name="description" placeholder='Summary here'
               ref="description" />
             </div>
-            <input type="submit" value="Submit" onClick={() => this.addMinion(this.refs.first_name.value, this.refs.last_name.value, this.refs.title.value, this.refs.description.value)} />
+              <input type="button" value="Submit" onClick={() => this.addUser(this.refs.first_name.value, this.refs.last_name.value, this.refs.title.value, this.refs.description.value)} />
           </form>
           <button onClick={this.closeModal}>Cancel</button>
         </Modal>
@@ -215,9 +223,9 @@ class Orgrel extends Component {
                 </div>
                 <div className="icon-options">
                   <i className="ion-plus-round" onClick={() => this.openModal()}></i>
-                  <i className="ion-edit" onClick={() => this.updateUser(staff)}></i>
+                  <i className="ion-edit" onClick={() => this.openModal(staff)}></i>
                   {/*
-                    <i className="ion-plus-round" onClick={() => this.addMinion()}></i>
+                    <i className="ion-plus-round" onClick={() => this.addUser()}></i>
                     <i className="ion-edit" onClick={() => this.updateUser(staff)}></i>
                   */}
                   <i className="ion-close-round" onClick={() => this.deleteUser(staff)}></i>
