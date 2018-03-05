@@ -22,6 +22,17 @@
   font-size: large;
 }
 
+/* Modal styles */
+form input, form textarea{
+  display: block;
+  width: 100%;
+}
+
+.modal-entry{
+  line-height: 30px;
+}
+/* Modal ends */
+
 .orgrel-contain{
   width: 90%;
   margin: 0 5%;
@@ -52,15 +63,6 @@
 .staff-section li:nth-child(odd){
   border: 1px solid grey;
   background-color: #0202;
-}
-
-
-form input{
-  display: block;
-}
-
-.modal-entry{
-  line-height: 30px;
 }
 .staff-entry img{
   width: 100px;
